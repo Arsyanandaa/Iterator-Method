@@ -1,15 +1,13 @@
 public class NilaiSiswa {
-    String nama;
+    public String nama;
+    public int nilai;
 
-    public NilaiSiswa(String nama) {
+    public NilaiSiswa(String nama, int nilai) {
         this.nama = nama;
+        this.nilai = nilai;
     }
 
-    public String getNama() {
-        return nama;
-    }
-
-    public void print() {
-        System.out.println("Nama siswa: " + nama);
+    public void tampil() {
+        System.out.println("Nama: " + nama + ", Nilai: " + nilai);
     }
 }

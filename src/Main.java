@@ -4,26 +4,19 @@ import java.util.Iterator;
 public class Main {
     public static void main(String[] args) {
         ArrayList<NilaiSiswa> daftarSiswa = new ArrayList<>();
-        daftarSiswa.add(new NilaiSiswa("Andi"));
-        daftarSiswa.add(new NilaiSiswa("Budi"));
-        daftarSiswa.add(new NilaiSiswa("Caca"));
-        daftarSiswa.add(new NilaiSiswa("Dedi"));
 
-        Iterator<NilaiSiswa> iter = daftarSiswa.iterator();
+        // Tambah data siswa
+        daftarSiswa.add(new NilaiSiswa("Andi", 80));
+        daftarSiswa.add(new NilaiSiswa("Budi", 85));
+        daftarSiswa.add(new NilaiSiswa("Citra", 90));
 
-        while (iter.hasNext()) {
-            NilaiSiswa siswa = iter.next();
-            siswa.print();
+        // Iterasi pake Iterator
+        Iterator<NilaiSiswa> iterator = daftarSiswa.iterator();
 
-            if (siswa.getNama().equals("Budi")) {
-                iter.remove();
-                System.out.println(siswa.getNama() + " dihapus dari daftar");
-            }
-        }
-
-        System.out.println("\nDaftar siswa sisa:");
-        for (NilaiSiswa s : daftarSiswa) {
-            s.print();
+        System.out.println("=== Daftar Nilai Siswa ===");
+        while (iterator.hasNext()) {
+            NilaiSiswa siswa = iterator.next();
+            siswa.tampil();
         }
     }
 }
